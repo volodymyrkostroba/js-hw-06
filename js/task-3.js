@@ -1,35 +1,11 @@
-class Storage {
-    constructor(arr){
-        this._items = arr;
-    }
+import users from '../users.js';
 
-    get items(){
-       return this._items;
-    }
-
-    addItem(item){
-        this._items.push(item);
-        
-    }
-
-    removeItem(item){
-        if(this._items.includes(item)){
-          this._items.splice(this._items.indexOf(item),1)
-        }
-    }
-}
-
-const storage = new Storage([
-    'Нанитоиды',
-    'Пролонгер',
-    'Железные жупи',
-    'Антигравитатор',
-  ]);
-
-  console.log(storage.items);
-
-  storage.addItem('Дроид');
-  console.log(storage.items);
-
-  storage.removeItem('Пролонгер');
-  console.log(storage.items);
+const getUsersWithEyeColor = (users, color) => users.filter(user =>{
+    return user.eyeColor === color;
+  })
+  
+  console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+  
+  
+  
+  

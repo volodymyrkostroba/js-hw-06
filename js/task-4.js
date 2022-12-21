@@ -1,31 +1,10 @@
-class StringBuilder{
-    constructor(string) {
-        this._string = string;
-    }
+import users from '../users.js';
 
-get string(){
-    return this._string;
-}
 
-append(str){
-    this._string += str;
-   
-}
-
-prepend(str){
-    this._string = str + this._string;
-   
-}
-
-pad(str){
-    this._string = str + this._string + str;
-}
-}
-
-const builder = new StringBuilder('.');
-
-builder.append('^');
-builder.prepend('^');
-builder.pad('=');
-
-console.log(builder.string);
+const getInactiveUsers = users => users.filter(user =>{
+    return !user.isActive;
+  })
+    // твой код
+  
+  
+  console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
